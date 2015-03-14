@@ -1,4 +1,5 @@
-﻿using PostcodeApi.DAO;
+﻿using System;
+using PostcodeApi.DAO;
 using PostcodeApi.Model;
 
 namespace PostcodeApi
@@ -15,12 +16,25 @@ namespace PostcodeApi
         /// <summary>
         /// Find information about a postcode by supplying it as a string
         /// </summary>
-        /// <param name="query">The postcode to query</param>
+        /// <param name="postcode">The postcode to postcode</param>
         /// <returns></returns>
-        public Postcode GetPostcodeInformation(string query)
+        public Postcode GetPostcodeInformation(string postcode)
         {
             PostcodeDao dao = new PostcodeDao(ApiKey);
-            return dao.Query(query).Resource;
+
+            return dao.Query(postcode)?.Resource;
+        }
+
+        /// <summary>
+        /// Find information about a postcode by supplying it as a string
+        /// </summary>
+        /// <param name="postcode">The postcode to postcode</param>
+        /// <returns></returns>
+        public Postcode GetAddressInformation(string postcode, string number)
+        {
+            PostcodeDao dao = new PostcodeDao(ApiKey);
+
+            return dao.Query(postcode, number)?.Resource;
         }
     }
 }
