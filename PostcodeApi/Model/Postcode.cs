@@ -5,22 +5,11 @@ namespace PostcodeApi.Model
     [DataContract]
     internal class PostcodeResponse
     {
-        private Postcode _postcode;
-        private bool _success;
-
         [DataMember(Name = "resource")]
-        public Postcode Resource
-        {
-            get { return _postcode; }
-            private set { _postcode = value; }
-        }
+        public Postcode Resource { get; private set; }
 
         [DataMember(Name = "success")]
-        public bool Success
-        {
-            get { return _success; }
-            private set { _success = value; }
-        }
+        public bool Success { get; private set; }
     }
 
     [DataContract]
