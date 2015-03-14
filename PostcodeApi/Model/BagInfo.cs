@@ -17,5 +17,10 @@ namespace PostcodeApi.Model
         internal BagInfo()
         {
         }
+
+        public override string ToString()
+        {
+            return string.Format("Id: {0}, Type: {1}, Purpose: {2}", Id, Type, Purpose);
+        }
     }
 }

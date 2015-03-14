@@ -11,6 +11,7 @@ namespace PostcodeApi.DAO
         internal T Query(string apiKey, string query)
         {
             string url = "http://api.postcodeapi.nu/" + query;
+            Debug.WriteLine(string.Format("url: {0}", url));
 
             var restResult = HttpGet(apiKey, url);
             return restResult;
