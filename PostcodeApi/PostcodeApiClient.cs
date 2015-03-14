@@ -3,11 +3,11 @@ using PostcodeApi.Model;
 
 namespace PostcodeApi
 {
-    public class PostcodeApi
+    public class PostcodeApiClient
     {
         public string ApiKey { private get; set; }
 
-        public PostcodeApi(string apiKey)
+        public PostcodeApiClient(string apiKey)
         {
             ApiKey = apiKey;
         }
