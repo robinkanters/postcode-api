@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.SqlServer.Server;
 using PostcodeApi.Model;
 
 namespace PostcodeApi.DAO
@@ -12,9 +13,16 @@ namespace PostcodeApi.DAO
             ApiKey = apiKey;
         }
 
-        internal PostcodeResponse Query(string query)
+        // TODO Throw proper exception (e.g. PostcodeNotFoundException) when postcode not found instead of null
+        internal PostcodeResponse Query(string postcode)
         {
-            return base.Query(ApiKey, query);
+            return base.Query(ApiKey, string.Format("{0}?view=bag", postcode));
+        }
+
+        // TODO Throw proper exception (e.g. AddressNotFoundException) when address not found instead of null
+        internal PostcodeResponse Query(string postcode, string number)
+        {
+            return base.Query(ApiKey, string.Format("{0}/{1}?view=bag", postcode, number));
         }
     }
 }
