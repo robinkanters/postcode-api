@@ -36,13 +36,6 @@ namespace PostcodeApi.Model
         [DataMember(Name = "bag")]
         public BagInfo BagInfo { get; private set; }
 
-        /// <summary>
-        /// Restricting access to constructor
-        /// </summary>
-//        internal Postcode()
-//        {
-//        }
-
         internal Postcode(string postcode, string street, string town, string municipality, float longitude, float latitude)
         {
             Street = street;
@@ -55,7 +48,7 @@ namespace PostcodeApi.Model
 
         public override string ToString()
         {
-            return string.Format("Street: {0}, Town: {1}, Municipality: {2}, PostcodeQuery: {3}, Longitude: {4}, Latitude: {5}, BagInfo: {6}",
+            return string.Format("{{Street: '{0}', Town: '{1}', Municipality: '{2}', PostcodeQuery: '{3}', Longitude: '{4}', Latitude: '{5}', BagInfo: {{{6}}}}}",
                 Street, Town, Municipality, PostcodeQuery, Longitude, Latitude, BagInfo);
         }
     }
