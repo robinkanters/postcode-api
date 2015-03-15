@@ -1,5 +1,4 @@
-﻿using System;
-using PostcodeApi.DAO;
+﻿using PostcodeApi.DAO;
 using PostcodeApi.Model;
 
 namespace PostcodeApi

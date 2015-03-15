@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.SqlServer.Server;
-using PostcodeApi.Model;
+﻿using PostcodeApi.Model;
 
 namespace PostcodeApi.DAO
 {
