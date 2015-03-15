@@ -26,7 +26,22 @@ Postcode result = client.GetPostcodeInformation("5041EB");
 Postcode result = client.GetAddressInformation("5041EB", "21");
 ```
 
+The query results come back as a ```Postcode``` object, which has public Properties from which you can get the data. The structure is:
+- Result (```Postcode```)
+  - Street (```string```)
+  - Town (```string```)
+  - Municipality (```string```)
+  - Postcode (```string```) (your query)
+  - Longitude (```float```)
+  - Latitude (```float```)
+  - BAG Info (```BagInfo```)
+    - Id (```string```)
+    - Type (```string```)
+    - Purpose (```string```)
+
 Please note that all home numbers are in ```string``` format, becuase they can contain numbers and other characters.
+
+It may seem tempting to cast the BAG ID to an ```int```. This is a bad idea, because [Kadaster](https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html)'s own API won't return results when there are leading zeroes missing.
 
 Notes
 -----
