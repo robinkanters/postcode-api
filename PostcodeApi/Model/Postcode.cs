@@ -5,9 +5,15 @@ namespace PostcodeApi.Model
     [DataContract]
     internal class PostcodeResponse
     {
+        /// <summary>
+        /// The actual result of the query
+        /// </summary>
         [DataMember(Name = "resource")]
         public Postcode Resource { get; private set; }
 
+        /// <summary>
+        /// Whether or not the query was successful
+        /// </summary>
         [DataMember(Name = "success")]
         public bool Success { get; private set; }
     }
@@ -15,24 +21,45 @@ namespace PostcodeApi.Model
     [DataContract]
     public class Postcode
     {
+        /// <summary>
+        /// Name of the street
+        /// </summary>
         [DataMember(Name = "street")]
         public string Street { get; private set; }
 
+        /// <summary>
+        /// What town the postcode is in
+        /// </summary>
         [DataMember(Name = "town")]
         public string Town { get; private set; }
 
+        /// <summary>
+        /// The municipality the postcode is in
+        /// </summary>
         [DataMember(Name = "municipality")]
         public string Municipality { get; private set; }
 
+        /// <summary>
+        /// The postcode that was queried
+        /// </summary>
         [DataMember(Name = "postcode")]
         public string PostcodeQuery { get; private set; }
 
+        /// <summary>
+        /// The longitude of the postcode for geomapping
+        /// </summary>
         [DataMember(Name = "longitude")]
         public float Longitude { get; private set; }
 
+        /// <summary>
+        /// The latitude of the postcode for geomapping
+        /// </summary>
         [DataMember(Name = "latitude")]
         public float Latitude { get; private set; }
 
+        /// <summary>
+        /// BAG (Basisregistraties Adressen en Gebouwen) information (purpose/type/id) 
+        /// </summary>
         [DataMember(Name = "bag")]
         public BagInfo BagInfo { get; private set; }
 

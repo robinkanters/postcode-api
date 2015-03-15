@@ -8,6 +8,10 @@ namespace PostcodeApi
     {
         public string ApiKey { private get; set; }
 
+        /// <summary>
+        /// Instantiates ApiClient object
+        /// </summary>
+        /// <param name="apiKey">Your postcodeapi.nu API key</param>
         public PostcodeApiClient(string apiKey)
         {
             ApiKey = apiKey;
@@ -16,8 +20,8 @@ namespace PostcodeApi
         /// <summary>
         /// Find information about a postcode by supplying it as a string
         /// </summary>
-        /// <param name="postcode">The postcode to postcode</param>
-        /// <returns></returns>
+        /// <param name="postcode">The postcode to query</param>
+        /// <returns>Information about the postcode queried, null if not found.</returns>
         public Postcode GetPostcodeInformation(string postcode)
         {
             PostcodeDao dao = new PostcodeDao(ApiKey);
@@ -28,8 +32,9 @@ namespace PostcodeApi
         /// <summary>
         /// Find information about a postcode by supplying it as a string
         /// </summary>
-        /// <param name="postcode">The postcode to postcode</param>
-        /// <returns></returns>
+        /// <param name="postcode">The postcode to query</param>
+        /// <param name="number">The home number to query</param>
+        /// <returns>Information about the address queried, null if not found.</returns>
         public Postcode GetAddressInformation(string postcode, string number)
         {
             PostcodeDao dao = new PostcodeDao(ApiKey);
