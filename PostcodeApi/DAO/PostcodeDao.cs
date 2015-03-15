@@ -6,7 +6,7 @@ namespace PostcodeApi.DAO
 {
     class PostcodeDao : BaseDao<PostcodeResponse>
     {
-        public string ApiKey { private get; set; }
+        private string ApiKey { get; set; }
 
         internal PostcodeDao(string apiKey)
         {
