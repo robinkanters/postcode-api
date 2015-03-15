@@ -1,5 +1,5 @@
-Postcode API for C#
-===================
+Postcode API for Windows
+========================
 
 Contents
 --------
