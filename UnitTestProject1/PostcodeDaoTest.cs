@@ -66,6 +66,22 @@ namespace PostcodeApi.Test
             Assert.IsNull(result);
         }
 
+        [Test]
+        [TestCase(51.5664f, 5.07718f)]
+        public void CanGetAddressFromCoordinates(float latitude, float longitude)
+        {
+            Postcode result = Client.GetAddressFromCoordinates(latitude, longitude);
+
+            Assert.NotNull(result);
+
+            Assert.IsNotEmpty(result.BagInfo.Purpose);
+            Assert.IsNotEmpty(result.BagInfo.Type);
+
+            Assert.AreEqual(result.Street, "Wilhelminapark");
+
+            System.Diagnostics.Debug.WriteLine(result.ToString());
+        }
+
         private PostcodeApiClient _api;
         private PostcodeApiClient Client
         {
