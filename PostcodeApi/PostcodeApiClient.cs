@@ -1,5 +1,4 @@
-﻿using System;
-using PostcodeApi.DAO;
+﻿using PostcodeApi.DAO;
 using PostcodeApi.Model;
 
 namespace PostcodeApi
@@ -40,6 +39,13 @@ namespace PostcodeApi
             PostcodeDao dao = new PostcodeDao(ApiKey);
 
             return dao.Query(postcode, number)?.Resource;
+        }
+
+        public Postcode GetAddressFromCoordinates(float latitude, float longitude)
+        {
+            PostcodeDao dao = new PostcodeDao(ApiKey);
+
+            return dao.Query(latitude, longitude)?.Resource;
         }
     }
 }

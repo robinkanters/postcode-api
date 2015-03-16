@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.SqlServer.Server;
-using PostcodeApi.Model;
+﻿using PostcodeApi.Model;
 
 namespace PostcodeApi.DAO
 {
@@ -23,6 +21,11 @@ namespace PostcodeApi.DAO
         internal PostcodeResponse Query(string postcode, string number)
         {
             return base.Query(ApiKey, string.Format("{0}/{1}?view=bag", postcode, number));
+        }
+        // TODO Throw proper exception (e.g. AddressNotFoundException) when address not found instead of null
+        internal PostcodeResponse Query(float latitude, float longitude)
+        {
+            return base.Query(ApiKey, string.Format("wgs84/{0},{1}?view=bag", latitude, longitude));
         }
     }
 }
