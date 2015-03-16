@@ -40,5 +40,12 @@ namespace PostcodeApi
 
             return dao.Query(postcode, number)?.Resource;
         }
+
+        public Postcode GetAddressFromCoordinates(float latitude, float longitude)
+        {
+            PostcodeDao dao = new PostcodeDao(ApiKey);
+
+            return dao.Query(latitude, longitude)?.Resource;
+        }
     }
 }

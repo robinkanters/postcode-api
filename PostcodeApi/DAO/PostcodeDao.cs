@@ -22,5 +22,10 @@ namespace PostcodeApi.DAO
         {
             return base.Query(ApiKey, string.Format("{0}/{1}?view=bag", postcode, number));
         }
+        // TODO Throw proper exception (e.g. AddressNotFoundException) when address not found instead of null
+        internal PostcodeResponse Query(float latitude, float longitude)
+        {
+            return base.Query(ApiKey, string.Format("wgs84/{0},{1}?view=bag", latitude, longitude));
+        }
     }
 }
