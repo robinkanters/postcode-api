@@ -3,10 +3,10 @@ Postcode API for Windows
 
 Contents
 --------
-- License
-- Purpose
-- Usage
-- Notes
+- [License](#license)
+- [Purpose](#purpose)
+- [Usage](#usage)
+- [Notes](#notes)
 
 License
 -------
