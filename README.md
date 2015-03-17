@@ -51,7 +51,7 @@ The query results come back as a ```Postcode``` object, which has public Propert
   - Street (```string```)
   - Town (```string```)
   - Municipality (```string```)
-  - Postcode (```string```) (your query)
+  - Postcode (```string```)
   - Longitude (```float```)
   - Latitude (```float```)
   - BAG Info (```BagInfo```)
