@@ -59,7 +59,7 @@ The query results come back as a ```Postcode``` object, which has public Propert
     - Type (```string```)
     - Purpose (```string```)
 
-Please note that all home numbers are in ```string``` format, becuase they can contain numbers and other characters.
+Please note that all home numbers are in ```string``` format, because they can contain numbers and other characters.
 
 It may seem tempting to cast the BAG ID to an ```int```. This is a bad idea, because [Kadaster](https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html)'s own API won't return results when there are leading zeroes missing.
 
