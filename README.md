@@ -6,6 +6,7 @@ Contents
 - [License](#license)
 - [Purpose](#purpose)
 - [Usage](#usage)
+- [Contributing](#contributing)
 - [Notes](#notes)
 
 License
@@ -62,6 +63,12 @@ The query results come back as a ```Postcode``` object, which has public Propert
 Please note that all home numbers are in ```string``` format, because they can contain numbers and other characters.
 
 It may seem tempting to cast the BAG ID to an ```int```. This is a bad idea, because [Kadaster](https://bagviewer.kadaster.nl/lvbag/bag-viewer/index.html)'s own API won't return results when there are leading zeroes missing.
+
+Contributing
+------------
+Please feel free to fork this repository if you have awesome new features in mind. Just submit a pull request when you're finished.
+
+Keep in mind that this project uses the [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) workflow, please follow that schema.
 
 Notes
 -----
