@@ -1,6 +1,8 @@
 Postcode API for C#
 ===================
 
+[![Build Status](https://travis-ci.org/robinkanters/postcode-api.svg?branch=master)](https://travis-ci.org/robinkanters/postcode-api)
+
 Contents
 --------
 - Purpose
